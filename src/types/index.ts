@@ -18,3 +18,7 @@ export interface OverviewMetric {
   value: number | string;
   icon: any;
 }
+export interface ChartDataPoint {
+  name: string;
+  sales: number;
+}
