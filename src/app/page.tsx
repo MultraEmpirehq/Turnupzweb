@@ -50,7 +50,7 @@ const Dashboard: NextPage = () => {
       <Sidebar activeNav={activeNav} onNavChange={setActiveNav} />
 
       <div className="flex-1 overflow-auto">
-        <Header />
+        <Header headerName="Dashboard" />
 
         <div className="p-8">
           <WelcomeBanner />
