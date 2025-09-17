@@ -6,21 +6,32 @@ import Banner from "../Banner";
 import DoneOutlinedIcon from "@mui/icons-material/DoneOutlined";
 import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
+import { useRouter } from "next/navigation"; // 👈 import router
 
 const SignIn = () => {
   const [inputValue, setInputValue] = useState<string>("");
   const [showPassword, setShowPassword] = useState<boolean>(false);
+
+  const router = useRouter(); // 👈 hook for navigation
+
+  const handleSignIn = (e: React.FormEvent) => {
+    e.preventDefault(); // prevent page reload
+    // 👉 Here you would normally validate/sign in via API
+    // For now just redirect to dashboard
+    router.push("/dashboard");
+  };
 
   return (
     <div className="w-full h-full flex justify-center">
       <div className="w-full flex justify-center items-center gap-20">
         <Banner />
 
-        <form action="" className="flex-1 flex justify-center">
+        <form onSubmit={handleSignIn} className="flex-1 flex justify-center">
           <div className="flex flex-col w-[460px]">
             <p className="text-[#024C6B] font-bold text-[34px] mb-[25px]">
               Sign In
             </p>
+
             {/* Email */}
             <div className="w-full items-center gap-[8px] mb-[25px]">
               <label
@@ -48,6 +59,7 @@ const SignIn = () => {
                 )}
               </div>
             </div>
+
             {/* Password */}
             <div className="flex flex-col gap-[8px] mb-[8px]">
               <div className="w-full items-center gap-[8px]">
@@ -77,21 +89,8 @@ const SignIn = () => {
                   )}
                 </div>
               </div>
-              <p className="text-[#03648C] text-[14px] font-normal hidden">
-                Successful!
-              </p>
-              <div className="flex justify-between hidden">
-                <p className="text-[#F15858] text-[14px] font-normal">
-                  Password is incorrect
-                </p>
-                <Link
-                  href="/forgot-password"
-                  className="text-[#03648C] text-[14px] font-normal"
-                >
-                  Forgot Password?
-                </Link>
-              </div>
             </div>
+
             <Link
               href="/forgot-password"
               className="text-[#03648C] text-[17px] font-normal text-right"
