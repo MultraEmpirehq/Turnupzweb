@@ -2,7 +2,7 @@
 
 import CreateScreen from "@/components/CreateScreen/CreateScreen";
 import turnupLogo from "@/assets/images/turnupLogo.png";
-import { Header } from "@/components/Header";
+import { Header } from "@/components/Dasboard/Header";
 import Image from "next/image";
 import React, { useState } from "react";
 import {

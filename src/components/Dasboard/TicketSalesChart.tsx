@@ -1,4 +1,4 @@
-import { ChartDataPoint } from "../types/index";
+import { ChartDataPoint } from "@/types/index";
 
 interface TicketSalesChartProps {
   chartData: ChartDataPoint[];

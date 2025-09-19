@@ -1,6 +1,6 @@
 import React from "react";
-import { WelcomeBanner } from "../WelcomeBanner";
-import { Header } from "../Header";
+import { WelcomeBanner } from "../Dasboard/WelcomeBanner";
+import { Header } from "../Dasboard/Header";
 import FormStep from "./FormStep";
 
 const CreateScreen = () => {

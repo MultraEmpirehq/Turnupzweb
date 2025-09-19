@@ -59,9 +59,9 @@ const SignUpPage = () => {
             </div>
             {/* Divider */}
             <div className="flex gap-2">
-              <span>--------------------------------------------</span>
-              <p>Or</p>
-              <span>--------------------------------------------</span>
+              <span className="bg-[#CFCFCF] h-[1px] w-40 my-auto"></span>
+              <p className="text-[#CFCFCF] mx-2">Or</p>
+              <span className="bg-[#CFCFCF] h-[1px] w-40 my-auto"></span>
             </div>
             {/* Other Options */}
             <div className="flex flex-col">
