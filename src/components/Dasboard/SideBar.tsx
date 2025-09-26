@@ -21,26 +21,25 @@ interface SidebarProps {
 }
 
 const navItems = [
-  { name: "Dashboard", icon: FiHome },
-  { name: "Create", icon: FiPlusSquare },
-  { name: "Manage Post", icon: FiFileText },
-  { name: "Chat", icon: FiMessageSquare },
-  { name: "Analysis", icon: FiBarChart2 },
-  { name: "Wallet", icon: FiCreditCard },
-  { name: "Ticket", icon: FiPocket },
-  { name: "Settings", icon: FiSettings },
-  { name: "Logout", icon: FiLogOut },
+  { name: "Dashboard", icon: FiHome, path: "/dashboard" },
+  { name: "Create", icon: FiPlusSquare, path: "/create" },
+  { name: "Manage Post", icon: FiFileText, path: "/manage-post" },
+  { name: "Chat", icon: FiMessageSquare, path: "/chat" },
+  { name: "Analysis", icon: FiBarChart2, path: "/analysis" },
+  { name: "Wallet", icon: FiCreditCard, path: "/wallet" },
+  { name: "Ticket", icon: FiPocket, path: "/ticket" },
+  { name: "Settings", icon: FiSettings, path: "/settings" },
+  { name: "Logout", icon: FiLogOut, path: "/sign-in" }, // handled separately
 ];
 
 export const Sidebar: React.FC<SidebarProps> = ({ activeNav, onNavChange }) => {
   const router = useRouter();
   const [showLogoutModal, setShowLogoutModal] = useState(false);
-
-  const handleNavClick = (name: string) => {
-    if (name === "Logout") {
+  const handleNavClick = (item: (typeof navItems)[number]) => {
+    if (item.name === "Logout") {
       setShowLogoutModal(true);
     } else {
-      onNavChange(name);
+      router.push(item.path); // navigate to the route
     }
   };
 
@@ -63,7 +62,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeNav, onNavChange }) => {
               return (
                 <li key={item.name}>
                   <button
-                    onClick={() => handleNavClick(item.name)}
+                    onClick={() => handleNavClick(item)}
                     className={`w-full text-left flex items-center py-3 px-4 rounded-lg transition-colors ${
                       activeNav === item.name
                         ? "bg-[#024C6B] text-white"
