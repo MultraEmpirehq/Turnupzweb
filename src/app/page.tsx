@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
 import bannerImage from "@/assets/images/banner-image.png";
 import Footer from "@/components/Footer";
