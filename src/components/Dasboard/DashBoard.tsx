@@ -1,5 +1,5 @@
 "use client";
-import { NextPage } from "next";
+
 import { useState } from "react";
 import { Event, OverviewMetric, ChartDataPoint } from "@/types/index";
 import { Sidebar } from "@/components/Dasboard/SideBar";
@@ -10,7 +10,7 @@ import { EventsSection } from "@/components/Dasboard/EventsSection";
 import { TicketSalesChart } from "@/components/Dasboard/TicketSalesChart";
 
 // Import your images
-import Image from "next/image";
+
 import div from "@/assets/images/div.png";
 import door from "@/assets/images/door.png";
 import uniqueIcon from "@/assets/images/uniqueIcon.png";
