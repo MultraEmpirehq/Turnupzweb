@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 // types/index.ts
 export interface Event {
   id: string;
@@ -16,7 +18,7 @@ export interface TicketSale {
 export interface OverviewMetric {
   title: string;
   value: number | string;
-  icon: any;
+  icon: StaticImageData; // 👈 change this
 }
 export interface ChartDataPoint {
   name: string;

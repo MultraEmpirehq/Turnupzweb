@@ -1,69 +1,114 @@
-"use client";
-import { NextPage } from "next";
-import { useState } from "react";
-import { Event, OverviewMetric, ChartDataPoint } from "../types/index";
-import { Sidebar } from "../components/SideBar";
-import { Header } from "../components/Header";
-import { WelcomeBanner } from "../components/WelcomeBanner";
-import { OverviewSection } from "../components/OverViewSection";
-import { EventsSection } from "../components/EventsSection";
-import { TicketSalesChart } from "../components/TicketSalesChart";
+import Header from "@/components/Header";
+import React from "react";
+import Image from "next/image";
+import bannerImage from "@/assets/images/banner-image.png";
+import Footer from "@/components/Footer";
+import Subscribe from "@/components/Subscribe";
+import EventCard from "@/components/EventCard";
 
-// Import your images
-import div from "@/assets/images/div.png";
-import door from "@/assets/images/door.png";
-import uniqueIcon from "@/assets/images/uniqueIcon.png";
-import venueIcon from "@/assets/images/venueIcon.png";
-import ticket from "@/assets/images/ticket.png";
+const AppButton = [
+  {
+    icon: "/google-play.svg",
+    appDes: "Get it on",
+    appName: "Google Play",
+  },
+  {
+    icon: "/apple.svg",
+    appDes: "Download on the",
+    appName: "App Store",
+  },
+];
 
-const Dashboard: NextPage = () => {
-  const [activeNav, setActiveNav] = useState<string>("Dashboard");
-
-  const events: Event[] = Array(6)
-    .fill({
-      id: "1",
-      name: "LAGOS FREEDOM FEST 2024",
-      date: new Date("2024-10-01"),
-      location: "Lagos, Nigeria",
-    })
-    .map((event, index) => ({ ...event, id: (index + 1).toString() }));
-
-  const overviewMetrics: OverviewMetric[] = [
-    { title: "Event Created", value: 72, icon: div },
-    { title: "Venue Created", value: 64, icon: door },
-    { title: "Total sold Tickets", value: 240, icon: uniqueIcon },
-    { title: "Wallet Balance", value: "₦ 64,000", icon: venueIcon },
-    { title: "Unique Responders", value: 120, icon: ticket },
-  ];
-
-  const chartData: ChartDataPoint[] = [
-    { name: "Mon", sales: 45 },
-    { name: "Tue", sales: 78 },
-    { name: "Wed", sales: 52 },
-    { name: "Thu", sales: 89 },
-    { name: "Fri", sales: 67 },
-    { name: "Sat", sales: 34 },
-  ];
-
+const page = () => {
   return (
-    <div className="flex h-screen bg-gray-100">
-      <Sidebar activeNav={activeNav} onNavChange={setActiveNav} />
+    <div className="w-full min-h-screen bg-[#F8F8F8]">
+      <Header />
 
-      <div className="flex-1 overflow-auto">
-        <Header />
+      {/* Content */}
+      <div className="w-full flex flex-col items-center p-20">
+        {/* Banner */}
+        <div
+          className="w-full h-[615px] rounded-[10px] bg-red-500 flex flex-col justify-center items-center gap-10 text-white bg-cover bg-center relative"
+          style={{ backgroundImage: `url(${bannerImage.src})` }}
+        >
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/40 rounded-[10px]" />
 
-        <div className="p-8">
-          <WelcomeBanner />
-          <OverviewSection metrics={overviewMetrics} />
-          <EventsSection events={events} />
+          <div className="relative z-100 text-center space-y-10">
+            <p className="text-[64px] font-extrabold">
+              Discover Amazing Events
+            </p>
+            <p className="text-[32px] text-center font-normal">
+              Download the Turnupz App to find and book the perfect events that{" "}
+              <br /> match your interests
+            </p>
+            <div className="flex gap-10 w-full justify-center">
+              {AppButton.map((btn, index) => (
+                <div key={index} className="w-[202px] rounded-[10px] ">
+                  <button
+                    className={`w-full ${
+                      index % 2 === 0 ? "text-black bg-white" : "bg-black"
+                    } h-[74px] flex items-center justify-center gap-4 rounded-[10px] cursor-pointer`}
+                  >
+                    <div className="relative w-[36px] h-[36px]">
+                      <Image
+                        src={btn.icon}
+                        alt="icon-logo"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                    <p className="text-[13px] text-left">
+                      {btn.appDes} <br />{" "}
+                      <span className="text-[15px]">{btn.appName}</span>
+                    </p>
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <TicketSalesChart chartData={chartData} />
+        {/* Trending Events */}
+        <div className="w-full my-30">
+          <p className="text-[36px] font-semibold mb-20">Trending Events</p>
+          <div className="w-full flex flex-wrap gap-y-20 gap-x-10 justify-center items-center">
+            <EventCard />
+          </div>
+
+          {/* See more */}
+          <div className="w-full mt-30 text-center">
+            <button
+              type="button"
+              className="border-[1.62px] border-[#05B5FF] bg-white w-[492px] h-[56px] rounded-lg text-[#2B293D] text-[22px] cursor-pointer"
+            >
+              See more
+            </button>
+          </div>
+        </div>
+
+        {/* Past Events */}
+        <div className="w-full">
+          <p className="text-[36px] font-semibold mb-20">Past Events</p>
+          <div className="w-full flex flex-wrap gap-y-20 gap-x-10 justify-center items-center">
+            <EventCard />
+          </div>
+          {/* See more */}
+          <div className="w-full mt-30 text-center">
+            <button
+              type="button"
+              className="border-[1.62px] border-[#05B5FF] bg-white w-[492px] h-[56px] rounded-lg text-[#2B293D] text-[22px] cursor-pointer"
+            >
+              See more
+            </button>
           </div>
         </div>
       </div>
+
+      <Subscribe />
+      <Footer />
     </div>
   );
 };
 
-export default Dashboard;
+export default page;
