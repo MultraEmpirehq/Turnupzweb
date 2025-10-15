@@ -25,7 +25,7 @@ export const TicketSalesChart: React.FC<TicketSalesChartProps> = ({
                 minHeight: "20px",
               }}
             ></div>
-            <span className="text-xs text-gray-500">{item.name}</span>
+            <span className="text-headers text-gray-500">{item.name}</span>
           </div>
         ))}
       </div>

@@ -7,7 +7,7 @@ const page = ({ params }: { params: { eventSlug: string } }) => {
     (event) => event.eventSlug === params.eventSlug
   );
   return (
-    <div>
+    <div className="w-full min-h-screen bg-background-color">
       <SingleEventPage selectedEvent={selectedEvent} />
     </div>
   );

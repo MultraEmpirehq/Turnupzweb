@@ -27,8 +27,8 @@ const SignIn = () => {
         <Banner />
 
         <form onSubmit={handleSignIn} className="flex-1 flex justify-center">
-          <div className="flex flex-col w-[460px]">
-            <p className="text-[#024C6B] font-bold text-[34px] mb-[25px]">
+          <div className="flex flex-col w-[379px] md:w-[460px] p-4">
+            <p className="text-btn-color font-bold text-[34px] mb-[25px]">
               Sign In
             </p>
 
@@ -36,23 +36,23 @@ const SignIn = () => {
             <div className="w-full items-center gap-[8px] mb-[25px]">
               <label
                 htmlFor="email"
-                className="font-bold text-sm text-[#5F5F5F]"
+                className="font-bold text-sm text-dark-neutral-text"
               >
                 Email
               </label>
-              <div className="w-full flex justify-between rounded-[8px] items-center bg-[#FCFCFC] border border-[#ECECEC] pr-[8px]">
+              <div className="primaryInputWrapper">
                 <input
                   type="email"
                   id="email"
                   placeholder="Enter your email"
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
-                  className="w-full rounded-[8px] h-[48px] px-4"
+                  className="primaryInput"
                 />
                 {inputValue.includes("@") && (
                   <DoneOutlinedIcon
                     style={{
-                      fontSize: "14px",
+                      fontSize: "18px",
                       color: "#5F5F5F",
                     }}
                   />
@@ -65,25 +65,25 @@ const SignIn = () => {
               <div className="w-full items-center gap-[8px]">
                 <label
                   htmlFor="password"
-                  className="font-bold text-sm text-[#5F5F5F]"
+                  className="font-bold text-sm text-dark-neutral-text"
                 >
                   Password
                 </label>
-                <div className="w-full flex justify-between rounded-[8px] items-center bg-[#FCFCFC] border border-[#ECECEC] pr-[8px] mb-2">
+                <div className="primaryInputWrapper">
                   <input
                     type={showPassword ? "text" : "password"}
                     id="password"
                     placeholder="Enter your password"
-                    className="w-full rounded-[8px] h-[48px] px-4"
+                    className="primaryInput"
                   />
                   {showPassword ? (
                     <VisibilityOutlinedIcon
-                      className="cursor-pointer text-[#03648C]"
+                      className="cursor-pointer text-primary-800"
                       onClick={() => setShowPassword(false)}
                     />
                   ) : (
                     <VisibilityOffOutlinedIcon
-                      className="cursor-pointer text-[#03648C]"
+                      className="cursor-pointer text-primary-800"
                       onClick={() => setShowPassword(true)}
                     />
                   )}
@@ -93,27 +93,24 @@ const SignIn = () => {
 
             <Link
               href="/forgot-password"
-              className="text-[#03648C] text-[17px] font-normal text-right"
+              className="text-primary-800 text-[17px] font-normal text-right"
             >
               Forgot Password?
             </Link>
 
             {/* Button */}
-            <button
-              type="submit"
-              className="w-full h-[69px] rounded-[19px] cursor-pointer border border-[#CFCFCF] text-[19px] font-medium text-[#FDEAF4] bg-linear-65 from-[#FF239A] to-[#05B5FF] shadow-md mt-[39px]"
-            >
+            <button type="submit" className="gradientBtn">
               Sign In
             </button>
 
-            <div className="flex flex-col gap-[24px] items-center w-full mt-[20px]">
-              <p className="text-base font-bold text-[#5F5F5F]">
+            <div className="flex flex-col gap-6 items-center w-full mt-5">
+              <p className="text-base font-bold text-dark-neutral-text">
                 Don’t have an account ?
               </p>
 
               <Link
                 href="/signup"
-                className="w-full h-[56px] rounded-[19px] border border-[#05B5FF] text-sm font-medium text-[#05B5FF] shadow-md flex justify-center items-center"
+                className="w-full h-14 rounded-xl md:rounded-2xl border border-primary text-sm font-medium text-primary shadow-md flex justify-center items-center"
               >
                 Sign Up
               </Link>

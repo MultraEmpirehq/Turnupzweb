@@ -2,19 +2,19 @@ import React from "react";
 
 const Subscribe = () => {
   return (
-    <div className="w-full h-[178px] bg-linear-65 from-[#05B5FF] to-[#FF239A] px-48 flex items-center justify-between">
-      <div className="text-[#2D2C3C]">
-        <p className="text-[27px] font-medium mb-4">
+    <div className="w-full h-auto md:h-[178px] bg-linear-65 from-[#05B5FF] to-[#FF239A] p-2 md:px-48 flex flex-col md:flex-row items-center justify-start md:justify-between">
+      <div className="w-full text-dark-bluish-gray flex flex-col">
+        <p className="text-primary-base md:text-subscribe-header font-medium mb-2 md:mb-4 text-center md:text-left">
           Subscribe to our Newsletter
         </p>
-        <p className="text-[18px] font-normal">
+        <p className="text-[12px] md:text-primary-base font-normal mb-4 text-center md:text-left">
           Receive our weekly newsletter & updates with new events from <br />{" "}
           your favourite organizers & venues.
         </p>
       </div>
 
       {/* Input */}
-      <div className="flex h-[60px]">
+      <div className="w-full justify-end flex h-[40px] md:h-[60px]">
         <input
           type="text"
           placeholder="Enter your email address"

@@ -40,7 +40,7 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ events }) => {
                 <h4 className="text-white font-semibold text-sm">
                   {event.name}
                 </h4>
-                <p className="text-white text-xs opacity-90">
+                <p className="text-white text-headers opacity-90">
                   Tuesday, October 1
                 </p>
               </div>

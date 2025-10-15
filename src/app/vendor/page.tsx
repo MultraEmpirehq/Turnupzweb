@@ -28,7 +28,11 @@ const screens: Record<string, ScreenComponent> = {
   Settings: () => <h1>Settings</h1>,
 };
 
-const navItems: { key: keyof typeof screens; label: string; icon: React.ComponentType<{ className?: string }> }[] = [
+const navItems: {
+  key: keyof typeof screens;
+  label: string;
+  icon: React.ComponentType<{ className?: string }>;
+}[] = [
   { key: "Dashboard", label: "Dashboard", icon: FiHome },
   { key: "Create", label: "Create", icon: FiPlusSquare },
   { key: "ManagePost", label: "Manage Post", icon: FiFileText },

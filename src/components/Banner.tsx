@@ -4,12 +4,12 @@ import turnups from "@/assets/images/Turnupz.png";
 
 const Banner = () => {
   return (
-    <div className="flex-1 bg-yellow-900 h-full w-full rounded-[16px] relative">
+    <div className="hidden md:block flex-1 h-full rounded-xl relative">
       <Image
         src={turnups}
         alt="banner"
         fill
-        className="absolute object-cover rounded-[16px]"
+        className="object-cover rounded-xl"
       />
     </div>
   );

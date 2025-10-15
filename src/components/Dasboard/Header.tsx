@@ -24,7 +24,7 @@ export const Header: React.FC<VendorHeaderProps> = ({ headerName }) => {
             </div>
             <div>
               <p className="text-sm font-medium text-gray-900">John Doe</p>
-              <p className="text-xs" style={{ color: "#821952" }}>
+              <p className="text-headers" style={{ color: "#821952" }}>
                 Organizer
               </p>
             </div>
