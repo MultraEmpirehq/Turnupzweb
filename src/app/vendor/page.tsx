@@ -2,9 +2,8 @@
 
 import CreateScreen from "@/components/CreateScreen/CreateScreen";
 import turnupLogo from "@/assets/images/turnupLogo.png";
-import { Header } from "@/components/Dasboard/Header";
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import {
   FiHome,
   FiPlusSquare,
@@ -14,11 +13,9 @@ import {
   FiCreditCard,
   FiPocket,
   FiSettings,
-  FiLogOut,
 } from "react-icons/fi";
-// import Dashboard from "../page";
 
-type ScreenComponent = React.ComponentType<any>;
+type ScreenComponent = React.ComponentType<unknown>;
 
 const screens: Record<string, ScreenComponent> = {
   Dashboard: () => <h1>Dashboard</h1>,
@@ -31,7 +28,11 @@ const screens: Record<string, ScreenComponent> = {
   Settings: () => <h1>Settings</h1>,
 };
 
-const navItems: { key: keyof typeof screens; label: string; icon: any }[] = [
+const navItems: {
+  key: keyof typeof screens;
+  label: string;
+  icon: React.ComponentType<{ className?: string }>;
+}[] = [
   { key: "Dashboard", label: "Dashboard", icon: FiHome },
   { key: "Create", label: "Create", icon: FiPlusSquare },
   { key: "ManagePost", label: "Manage Post", icon: FiFileText },
@@ -40,7 +41,6 @@ const navItems: { key: keyof typeof screens; label: string; icon: any }[] = [
   { key: "Wallet", label: "Wallet", icon: FiCreditCard },
   { key: "Ticket", label: "Ticket", icon: FiPocket },
   { key: "Settings", label: "Settings", icon: FiSettings },
-  //   { key: "Logout", label: "Logout", icon: FiLogOut },
 ];
 
 const CreatePage = () => {
@@ -68,25 +68,21 @@ const CreatePage = () => {
         {/* Menus */}
         <div className="px-4">
           <ul className="space-y-1">
-            {navItems.map(({ key, label, icon }) => {
-              const IconComponent = icon;
-              const isActive = active === key;
-              return (
-                <li key={key}>
-                  <button
-                    onClick={() => setActive(key)}
-                    className={`border border-[#F6F6F6] w-full text-left flex items-center h-[60px] rounded-tr-[16px] rounded-br-[16px] px-4 transition-colors ${
-                      active === key
-                        ? "bg-[#024C6B] text-white"
-                        : "text-input-text cursor-pointer"
-                    }`}
-                  >
-                    <IconComponent className="mr-3 h-5 w-5" />
-                    <p>{label}</p>
-                  </button>
-                </li>
-              );
-            })}
+            {navItems.map(({ key, label, icon: IconComponent }) => (
+              <li key={key}>
+                <button
+                  onClick={() => setActive(key)}
+                  className={`border border-[#F6F6F6] w-full text-left flex items-center h-[60px] rounded-tr-[16px] rounded-br-[16px] px-4 transition-colors ${
+                    active === key
+                      ? "bg-[#024C6B] text-white"
+                      : "text-[#7D7D7D] cursor-pointer"
+                  }`}
+                >
+                  <IconComponent className="mr-3 h-5 w-5" />
+                  <p>{label}</p>
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
 

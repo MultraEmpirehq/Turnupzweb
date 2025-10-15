@@ -1,5 +1,5 @@
 "use client";
-import { NextPage } from "next";
+
 import { useState } from "react";
 import { Event, OverviewMetric, ChartDataPoint } from "@/types/index";
 import { Sidebar } from "@/components/Dasboard/SideBar";
@@ -10,7 +10,7 @@ import { EventsSection } from "@/components/Dasboard/EventsSection";
 import { TicketSalesChart } from "@/components/Dasboard/TicketSalesChart";
 
 // Import your images
-import Image from "next/image";
+
 import div from "@/assets/images/div.png";
 import door from "@/assets/images/door.png";
 import uniqueIcon from "@/assets/images/uniqueIcon.png";
@@ -28,44 +28,6 @@ const Dashboard = () => {
       location: "Lagos, Nigeria",
     })
     .map((event, index) => ({ ...event, id: (index + 1).toString() }));
-  // const overviewMetrics: OverviewMetric[] = [
-  //   {
-  //     title: "Event Created",
-  //     value: 72,
-  //     icon: <Image src={div} alt="Event Created" width={32} height={32} />,
-  //   },
-  //   {
-  //     title: "Venue Created",
-  //     value: 64,
-  //     icon: <Image src={door} alt="Venue Created" width={32} height={32} />,
-  //   },
-  //   {
-  //     title: "Total sold Tickets",
-  //     value: 240,
-  //     icon: (
-  //       <Image
-  //         src={uniqueIcon}
-  //         alt="Total sold Tickets"
-  //         width={32}
-  //         height={32}
-  //       />
-  //     ),
-  //   },
-  //   {
-  //     title: "Wallet Balance",
-  //     value: "₦ 64,000",
-  //     icon: (
-  //       <Image src={venueIcon} alt="Wallet Balance" width={32} height={32} />
-  //     ),
-  //   },
-  //   {
-  //     title: "Unique Responders",
-  //     value: 120,
-  //     icon: (
-  //       <Image src={ticket} alt="Unique Responders" width={32} height={32} />
-  //     ),
-  //   },
-  // ];
   const overviewMetrics: OverviewMetric[] = [
     { title: "Event Created", value: 72, icon: div },
     { title: "Venue Created", value: 64, icon: door },
@@ -85,10 +47,8 @@ const Dashboard = () => {
   return (
     <div className="flex h-screen bg-gray-100">
       <Sidebar activeNav={activeNav} onNavChange={setActiveNav} />
-
       <div className="flex-1 overflow-auto">
         <Header headerName="Dashboard" />
-
         <div className="p-8">
           <WelcomeBanner />
           <OverviewSection metrics={overviewMetrics} />
