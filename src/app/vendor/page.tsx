@@ -78,7 +78,7 @@ const CreatePage = () => {
                     className={`border border-[#F6F6F6] w-full text-left flex items-center h-[60px] rounded-tr-[16px] rounded-br-[16px] px-4 transition-colors ${
                       active === key
                         ? "bg-[#024C6B] text-white"
-                        : "text-[#7D7D7D] cursor-pointer"
+                        : "text-input-text cursor-pointer"
                     }`}
                   >
                     <IconComponent className="mr-3 h-5 w-5" />

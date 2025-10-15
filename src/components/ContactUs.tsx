@@ -11,7 +11,7 @@ const ContactUs = () => {
       <Header />
 
       <div className="w-full flex h-[354px] items-center bg-linear-to-r from-[#05B5FF] to-[#FF239A] opacity-[70%]">
-        <div className="flex flex-1 bg-red-900 h-full">
+        <div className="flex flex-1 h-full">
           <div className="w-full h-full relative">
             <Image
               src={contactImage}
@@ -66,15 +66,15 @@ const ContactUs = () => {
             <div className="w-full items-center gap-[8px] mb-[25px]">
               <label
                 htmlFor="email"
-                className="font-bold text-sm text-[#5F5F5F]"
+                className="font-bold text-sm text-dark-neutral-text"
               >
                 Name
               </label>
-              <div className="w-full flex justify-between rounded-[8px] items-center bg-[#FCFCFC] border border-[#ECECEC] pr-[8px]">
+              <div className="w-full flex justify-between rounded-md items-center bg-neutral-white border border-neutral-white-50 pr-[8px]">
                 <input
                   type="text"
                   placeholder="Enter your name"
-                  className="w-full rounded-[8px] h-[48px] px-4"
+                  className="w-full rounded-md h-[48px] px-4"
                 />
               </div>
             </div>
@@ -82,15 +82,15 @@ const ContactUs = () => {
             <div className="w-full items-center gap-[8px] mb-[25px]">
               <label
                 htmlFor="email"
-                className="font-bold text-sm text-[#5F5F5F]"
+                className="font-bold text-sm text-dark-neutral-text"
               >
                 Email
               </label>
-              <div className="w-full flex justify-between rounded-[8px] items-center bg-[#FCFCFC] border border-[#ECECEC] pr-[8px]">
+              <div className="w-full flex justify-between rounded-md items-center bg-neutral-white border border-neutral-white-50 pr-[8px]">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="w-full rounded-[8px] h-[48px] px-4"
+                  className="w-full rounded-md h-[48px] px-4"
                 />
               </div>
             </div>
@@ -98,18 +98,18 @@ const ContactUs = () => {
             <div className="w-full items-center gap-[8px] mb-[25px]">
               <label
                 htmlFor="email"
-                className="font-bold text-sm text-[#5F5F5F]"
+                className="font-bold text-sm text-dark-neutral-text"
               >
                 Message
               </label>
-              <div className="w-full flex justify-between rounded-[8px] items-center bg-[#FCFCFC] border border-[#ECECEC] pr-[8px]">
-                <textarea className="w-full rounded-[8px] h-[48px] px-4"></textarea>
+              <div className="w-full flex justify-between rounded-md items-center bg-neutral-white border border-neutral-white-50 pr-[8px]">
+                <textarea className="w-full rounded-md h-[48px] px-4"></textarea>
               </div>
             </div>
 
             <button
               type="submit"
-              className="w-[460px] h-[69px] rounded-[19px] cursor-pointer border border-[#CFCFCF] text-[19px] font-medium text-[#FDEAF4] bg-linear-to-r from-[#05B5FF] to-[#FF239A] shadow-md mt-[39px]"
+              className="w-[460px] h-[69px] rounded-2xl cursor-pointer border border-light-neutral-text text-[19px] font-medium text-white bg-linear-to-r from-[#05B5FF] to-[#FF239A] shadow-md mt-[39px]"
             >
               Submit
             </button>

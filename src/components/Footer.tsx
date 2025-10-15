@@ -4,8 +4,8 @@ import { CompanyInfo, Help, Categories, FollowUs } from "@/data/FooterData";
 
 const Footer = () => {
   return (
-    <footer className="w-full h-[361px] bg-[#2B293D] flex px-48 flex flex-col justify-center text-[#A9A9A9]">
-      <div className="flex gap-20 mb-10">
+    <footer className="w-full h-auto md:h-[361px] bg-[#2B293D] flex p-12 md:px-48 flex-col justify-center text-[#A9A9A9]">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-20 mb-10">
         {/* Comapany Info */}
         <div>
           {CompanyInfo.map((info, index) => (

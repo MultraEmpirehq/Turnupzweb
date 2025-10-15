@@ -1,5 +1,167 @@
 @import "tailwindcss";
 
+@theme {
+  /* --color-*: initial; */
+  --color-background-color: #f8f8f8;
+  --color-primary: #05b5ff;
+  --color-primary-800: #03648c;
+  --color-primary-700: #0481b5;
+  --color-btn-color: #024c6b;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-neutral-white: #fcfcfc;
+  --color-neutral-white-50: #ececec;
+  --color-neutral-white-500: #e3e3e3;
+  --color-neutral-white-700: #a1a1a1;
+  --color-dark-primary: #024c6b;
+  --color-dark-neutral-text: #5f5f5f;
+  --color-light-neutral-text: #cfcfcf;
+  --color-error-text: #f15858;
+  --color-error-border: #f37373;
+  --color-footer-text: #a9a9a9;
+  --color-dark-bluish-gray: #2d2c3c;
+  --color-dark-grey: #5a5a5a;
+  --color-light-black: #424242;
+  --color-dark-navy-blue: #2b293d;
+  --color-input-text: #7d7d7d;
+  --color-share-btn: #58cdff;
+  --color-stepper: #ed2e95;
+
+  --text-header: 64px;
+  --text-sub-header: 32px;
+  --text-primary-text: 36px;
+  --text-primary-base: 18px;
+  --text-header-text: 24px;
+  --text-subscribe-header: 27px;
+  --text-card-event-header: 17.77px;
+  --text-card-event-time: 12.92px;
+  --text-card-event-month: 19.38px;
+  --text-card-event-date: 22.61px;
+  --text-footer-xs: 13.5px;
+
+  --radius-xs: 7px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 16px;
+  --radius-2xl: 19px;
+}
+
+@layer components {
+  .eventCard {
+    background-color: #ffffff;
+    width: 413px;
+    height: 372px;
+    border-radius: var(--radius-lg);
+  }
+  .inputWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--radius-md);
+    background-color: var(--color-neutral-white);
+    border-width: 1.22px;
+    border-color: var(--color-neutral-white-50);
+    padding-right: 8px;
+    color: var(--color-input-text);
+  }
+  .gradientBtn {
+    width: 100%;
+    height: 56px;
+    border-radius: 16px;
+    background: linear-gradient(90deg, #05b5ff 0%, #a855f7 50%, #ff239a 100%);
+    color: #ffffff;
+    margin-top: 39px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.4);
+
+    @media (min-width: 768px) {
+      height: 69px;
+      border-radius: 19px;
+    }
+  }
+  .primaryInputWrapper {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    padding: 0 8px;
+    border-radius: var(--radius-md);
+    outline: none;
+    border-width: 1px;
+    border-color: var(--color-light-neutral-text);
+    color: var(--color-input-text);
+    background-color: var(--color-neutral-white);
+
+    @media (min-width: 768px) {
+      height: 59.2px;
+      border-radius: 9.87px;
+      font-size: 14px;
+    }
+  }
+  .primaryInput {
+    width: 100%;
+    border-radius: var(--radius-md);
+    padding: 0 16px;
+    color: var(--color-input-text);
+    outline: none;
+  }
+  .signUpInput {
+    width: 100%;
+    height: 48px;
+    font-size: 14px;
+    padding: 0 8px;
+    border-radius: var(--radius-md);
+    outline: none;
+    border-width: 1px;
+    border-color: var(--color-light-neutral-text);
+    color: var(--color-input-text);
+    background-color: var(--color-neutral-white);
+
+    @media (min-width: 768px) {
+      width: 386px;
+      height: 59.39px;
+      font-size: 17.32px;
+      padding: 0 9.9px;
+    }
+  }
+  .signUpOpt {
+    width: 100%;
+    height: 45px;
+    font-size: 14px;
+    background-color: var(--color-neutral-white);
+    border-width: 1px;
+    border-color: var(--color-light-neutral-text);
+    color: var(--color-input-text);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+
+    @media (min-width: 768px) {
+      height: 62px;
+      font-size: 22.48px;
+      border-radius: 12px;
+    }
+  }
+  .seeMoreBtn {
+    border-width: 1.62px;
+    border-color: var(--color-primary);
+    background-color: #ffffff;
+    width: 100%;
+    height: 56px;
+    border-radius: 6.46px;
+    font-size: 22.61px;
+    color: var(--color-dark-navy-blue);
+
+    @media (min-width: 768px) {
+      width: 492px;
+    }
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
